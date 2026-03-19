@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import { TreePine, Menu, X, Satellite, Globe } from "lucide-react";
+import { TreePine, Menu, X, Satellite } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../components/ui/button";
 

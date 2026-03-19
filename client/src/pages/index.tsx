@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { ArrowRight, Satellite, Globe, TreePine, AlertTriangle, TrendingDown, Shield } from "lucide-react";
 import { Button } from "../components/ui/button";
 import heroForest from "../assets/hero-forest.png";
+import EarthGlobe from "../components/EarthGlobe";
 
 const features = [
   {
@@ -78,18 +79,20 @@ export default function Index() {
         />
 
         {/* Hero content */}
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center pt-16">
+        <div className="relative z-10 flex h-full flex-col lg:flex-row items-center justify-center container mx-auto px-4 pt-8 lg:pt-16 pb-24 lg:pb-0 gap-8 overflow-y-auto">
+          {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex-1 w-full text-center lg:text-left z-20 order-2 lg:order-1 flex flex-col items-center lg:items-start pt-8 lg:pt-0"
           >
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary backdrop-blur-sm">
               <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
               Live Environmental Monitoring Platform
             </div>
 
-            <h1 className="font-display text-5xl font-extrabold tracking-tight sm:text-7xl lg:text-8xl mb-6 max-w-5xl leading-none">
+            <h1 className="font-display text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-[5.5rem] mb-6 max-w-5xl leading-[1.1]">
               The Earth Is
               <br />
               <span
@@ -104,25 +107,35 @@ export default function Index() {
               </span>
             </h1>
 
-            <p className="mx-auto max-w-2xl text-lg text-muted-foreground mb-8 sm:text-xl">
+            <p className="max-w-xl text-lg text-muted-foreground mb-8 sm:text-lg">
               EcoWatch delivers real-time satellite intelligence on deforestation, global warming, and
               environmental change — empowering action before it's too late.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center gap-4 align-start">
               <NavLink to="/dashboard">
-                <Button size="lg" className="bg-gradient-green border-0 shadow-glow font-display text-base px-8">
+                <Button size="lg" className="bg-gradient-green border-0 shadow-glow font-display text-base px-8 h-12">
                   <Satellite className="mr-2 h-5 w-5" />
                   Open Dashboard
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </NavLink>
               <a href="#features">
-                <Button size="lg" variant="outline" className="border-border/60 font-display text-base px-8">
+                <Button size="lg" variant="outline" className="border-border/60 font-display text-base px-8 h-12 bg-background/20 backdrop-blur-md">
                   Learn More
                 </Button>
               </a>
             </div>
+          </motion.div>
+
+          {/* 3D Globe Section */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+            className="flex-1 w-full max-w-[300px] sm:max-w-md lg:max-w-2xl aspect-square lg:h-[700px] relative z-10 order-1 lg:order-2"
+          >
+            <EarthGlobe />
           </motion.div>
         </div>
 

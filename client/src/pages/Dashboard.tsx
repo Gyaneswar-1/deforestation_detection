@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, ChevronDown, Layers, Globe, SlidersHorizontal, RefreshCw } from "lucide-react";
 import { EnvironmentalStats } from "../components/EnvironmentalStats";
-import { DeforestationMap, type DeforestationZone } from "../components/DeforestationMap";
+import { DeforestationMap } from "../components/DeforestationMap";
 import { IncidentModal } from "../components/IncidentModal";
 import heroForest from "../assets/hero-forest.png";
 
